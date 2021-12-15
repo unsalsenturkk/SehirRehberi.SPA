@@ -3,5 +3,5 @@ export class Photo {
     cityId:number| undefined
     dateAdded:Date| undefined
     description:string| undefined
-    isMain:boolean| undefined
+    isMain:boolean| undefined    
 }
