@@ -1,4 +1,4 @@
 export class Value {
-    id : number | undefined;;
+    id : number | undefined;
     name:string | undefined;
 }
