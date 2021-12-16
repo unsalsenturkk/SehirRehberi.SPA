@@ -6,5 +6,5 @@ export class City {
     description: string | undefined
     userId: number | undefined
     photoUrl: string | undefined
-    photos: Photo[] | undefined
+    photos: Photo[] = [];
 }
