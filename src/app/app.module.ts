@@ -11,21 +11,26 @@ import { NavComponent } from './nav/nav.component';
 import { CityComponent } from './city/city.component';
 import { CityDetailComponent } from './city/city-detail/city-detail.component';
 import { TestComponent } from './test/test.component';
+import { CityAddComponent } from './city/city-add/city-add.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [				
+  declarations: [
     AppComponent,
-      ValueComponent,
-      NavComponent,
-      CityComponent,
-      CityDetailComponent,
-      TestComponent
-   ],
+    ValueComponent,
+    NavComponent,
+    CityComponent,
+    CityDetailComponent,
+    TestComponent,
+    CityAddComponent
+  ],
   imports: [
     BrowserModule,
-    HttpClientModule,    
+    HttpClientModule,
     RouterModule.forRoot(appRoutes),
     NgxGalleryModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
