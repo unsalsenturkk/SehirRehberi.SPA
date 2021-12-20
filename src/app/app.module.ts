@@ -14,6 +14,7 @@ import { CityDetailComponent } from './city/city-detail/city-detail.component';
 import { TestComponent } from './test/test.component';
 import { CityAddComponent } from './city/city-add/city-add.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CityComponent,
     CityDetailComponent,
     TestComponent,
-    CityAddComponent
+    CityAddComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
