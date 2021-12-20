@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { AlertifyService } from './services/alertify.service';
+import { NgxEditorModule } from 'ngx-editor'
 
 import { AppComponent } from './app.component';
 import { ValueComponent } from './value/value.component';
@@ -33,7 +34,8 @@ import { RegisterComponent } from './register/register.component';
     RouterModule.forRoot(appRoutes),
     NgxGalleryModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxEditorModule
   ],
   providers: [AlertifyService],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CityService } from 'src/app/services/city.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { City } from 'src/app/models/city';
+import {  Editor, Toolbar } from "ngx-editor";
 
 
 @Component({
@@ -20,8 +21,17 @@ export class CityAddComponent implements OnInit {
 
   city: City = new City;
   cityAddForm!: FormGroup;
-
-
+  editor!: Editor;  
+  toolbar: Toolbar = [
+    ["bold", "italic"],
+    ["underline", "strike"],
+    ["code", "blockquote"],
+    ["ordered_list", "bullet_list"],
+    [{ heading: ["h1", "h2", "h3", "h4", "h5", "h6"] }],
+    ["link", "image"],
+    ["text_color", "background_color"],
+    ["align_left", "align_center", "align_right", "align_justify"]
+  ];
   createCityForm() {
     this.cityAddForm = this.formbuilder.group(
       {
@@ -33,6 +43,7 @@ export class CityAddComponent implements OnInit {
 
   ngOnInit() {
     this.createCityForm();
+    this.editor = new Editor();
   }
 
   add() {
