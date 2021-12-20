@@ -16,7 +16,7 @@
           <a class="nav-link" routerLink="value" routerLinkActive="active">Values</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"routerLink="cityadd" routerLinkActive="active">Şehir Ekle</a>
+          <a class="nav-link" routerLink="cityadd" routerLinkActive="active">Şehir Ekle</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
@@ -35,8 +35,10 @@
       <form *ngIf="!isAuthenticated" #loginForm="ngForm" (ngSubmit)="login()" class="d-flex">
         <input class="form-control me-sm-2" name="userName" [(ngModel)] ="loginUser.userName" required type="text" placeholder="User Name">
         <input class="form-control me-sm-2" name="password" [(ngModel)] ="loginUser.password" required type="password" placeholder="Password">
-        <button class="btn btn-secondary my-2 my-sm-0" [disabled]="!loginForm.valid" type="submit">Login</button>
+        <button class="btn btn-secondary my-2 my-sm-0" [disabled]="!loginForm.valid" type="submit">Giriş</button>
       </form>
+      <button class="btn btn-secondary my-2 my-sm-0" *ngIf="isAuthenticated" (click)="logOut()" type="submit">Çıkış</button>
+
     </div>
   </div>
 </nav>

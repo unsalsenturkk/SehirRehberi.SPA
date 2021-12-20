@@ -46,10 +46,14 @@ export class AuthService {
 
   saveToken(token: string) {
     localStorage.setItem(this.TOKEN_KEY, token)
+    
   }
 
   logOut(){
     localStorage.removeItem(this.TOKEN_KEY)
+    this.alertifyService.error("Sistemden çıkış yapıldı")
+    this.router.navigateByUrl('/city')
+
   }
 
   loggedIn(){
