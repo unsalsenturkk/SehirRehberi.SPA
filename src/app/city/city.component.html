@@ -11,9 +11,8 @@
           alt="car image cap"
         />
         <div class="card-body">
-          <p class="card-text">
-            {{ city.description }}
-          </p>
+          <p class="card-text" [innerHTML]="city.description"></p>
+
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
               <button

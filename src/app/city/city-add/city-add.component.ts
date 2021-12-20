@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CityService } from 'src/app/services/city.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { City } from 'src/app/models/city';
-import {  Editor, Toolbar } from "ngx-editor";
+import { Editor, Toolbar } from "ngx-editor";
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -13,15 +14,15 @@ import {  Editor, Toolbar } from "ngx-editor";
 })
 export class CityAddComponent implements OnInit {
 
-  constructor(private cityService: CityService, 
-    private formbuilder: FormBuilder
-
-    ) { }
+  constructor(private cityService: CityService,
+    private formbuilder: FormBuilder,
+    private authservice: AuthService
+  ) { }
 
 
   city: City = new City;
   cityAddForm!: FormGroup;
-  editor!: Editor;  
+  editor!: Editor;
   toolbar: Toolbar = [
     ["bold", "italic"],
     ["underline", "strike"],
@@ -49,10 +50,9 @@ export class CityAddComponent implements OnInit {
   add() {
     if (this.cityAddForm.valid) {
       this.city = Object.assign({}, this.cityAddForm.value)
-      // TODO:
-      this.city.userId = 2;
+      this.city.userId = this.authservice.getCurrentUserId();
       this.cityService.add(this.city);
-      
+
     }
   }
 }

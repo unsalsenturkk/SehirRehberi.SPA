@@ -6,6 +6,8 @@ import { appRoutes } from './routes';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { AlertifyService } from './services/alertify.service';
 import { NgxEditorModule } from 'ngx-editor'
+import { FileUploadModule } from 'ng2-file-upload'
+
 
 import { AppComponent } from './app.component';
 import { ValueComponent } from './value/value.component';
@@ -16,6 +18,7 @@ import { TestComponent } from './test/test.component';
 import { CityAddComponent } from './city/city-add/city-add.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import { PhotoComponent } from './photo/photo.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { RegisterComponent } from './register/register.component';
     CityDetailComponent,
     TestComponent,
     CityAddComponent,
-    RegisterComponent
+    RegisterComponent,
+    PhotoComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,8 @@ import { RegisterComponent } from './register/register.component';
     NgxGalleryModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxEditorModule
+    NgxEditorModule,
+    FileUploadModule
   ],
   providers: [AlertifyService],
   bootstrap: [AppComponent]
