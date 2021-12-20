@@ -27,7 +27,7 @@ export class CityService {
   getPhotosByCity(cityId: number): Observable<Photo[]> {
     return this.httpClient.get<Photo[]>(this.path + "cities/photos/?cityId=" + cityId)
   }
-  add(city: any) {
+  add(city: City) {
     this.httpClient.post(this.path + 'cities/add', city).subscribe((data: any) => {
       this.alertifyService.success("Şehir başarıyla eklendi")
       this.router.navigateByUrl('/cityDetail/' + data["id"])
