@@ -16,7 +16,7 @@ export class AuthService {
     private router: Router,
     private alertifyService: AlertifyService
   ) { }
-  path = "http://localhost:63528/api/auth/";
+  path = "http://localhost:63528/api/auths/";
   userToken: any;
   decodedToken: any;
   jwtHelper: JwtHelperService = new JwtHelperService();
@@ -26,9 +26,9 @@ export class AuthService {
     let headers = new HttpHeaders();
     headers = headers.append("Content-Type", "application/json")
     this.httpclient.post(this.path + "login", loginUser, { headers: headers }).subscribe((data: any) => {
-      this.saveToken(data['tokenString'])
-      this.userToken = data['tokenString'];
-      this.decodedToken = this.jwtHelper.decodeToken(data['tokenString'])
+      this.saveToken(data['value'])
+      this.userToken = data['value'];
+      this.decodedToken = this.jwtHelper.decodeToken(data['value'])
       this.alertifyService.success("Sisteme giriş yapıldı")
       this.router.navigateByUrl('/city')
     });
@@ -53,7 +53,7 @@ export class AuthService {
   }
 
   loggedIn(){
-    return this.jwtHelper.isTokenExpired(this.TOKEN_KEY)
+    return !this.jwtHelper.isTokenExpired(this.userToken)
   }
 
   get token(){
