@@ -3,6 +3,7 @@ import { CityService } from 'src/app/services/city.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { City } from 'src/app/models/city';
 
+
 @Component({
   selector: 'app-city-add',
   templateUrl: './city-add.component.html',
@@ -11,7 +12,10 @@ import { City } from 'src/app/models/city';
 })
 export class CityAddComponent implements OnInit {
 
-  constructor(private cityService: CityService, private formbuilder: FormBuilder) { }
+  constructor(private cityService: CityService, 
+    private formbuilder: FormBuilder
+
+    ) { }
 
 
   city: City = new City;
@@ -37,6 +41,7 @@ export class CityAddComponent implements OnInit {
       // TODO:
       this.city.userId = 2;
       this.cityService.add(this.city);
+      
     }
   }
 }
