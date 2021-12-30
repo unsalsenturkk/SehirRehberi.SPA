@@ -1,7 +1,9 @@
 # SehirRehpberiSpa
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
+
 Technologies: JavaScript, Angular, HTML, CSS, Bootstrap
+
 Features: The front end of the app where people can add photos of places they've visited and seen.
 
 
